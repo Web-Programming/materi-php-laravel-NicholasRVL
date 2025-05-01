@@ -11,9 +11,29 @@ Route::get('/profil', function () {
 });
 
 Route::get('/berita/{id}/{title?}', function ($id, $title = NULL) {
+
     return view('berita', data:['id' => $id, 'title' => $title ]);
 });
 
 Route::get('/total/{angka1}/{angka2}/{angka3?}', function ($angka1, $angka2, $angka3 = NULL) {
     return view('total', data:['angka1' => $angka1, 'angka2' => $angka2, 'angka3' => $angka3 ]);
+
+    return view('berita', data: ['id' => $id, 'title'  => $title]);
+});
+
+Route::get('/total/{angka1}/{angka2}/{angka3?}', function ($angka1, $angka2, $angka3 = NULL) {
+    return view('total', data: ['angka1' => $angka1, 'angka2'  => $angka2, 'angka3' => $angka3]);
+});
+
+Route::get('/fakultas', function () {
+    // return view('fakultas.index', ["ilkom" => "Fakultaas Ilmu Kommputer Dan Rekayasa"]);
+    // return view('fakultas.index', ["Fakultas" => ["Fakultaas Ilmu Kommputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"]]);
+    // return view('fakultas.index') -> with ("fakultas", ["Fakultaas Ilmu Kommputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"]) ;
+
+    $kampus = "Universitas Multi Data Palembang";
+
+    // $fakultas = [];
+    $fakultas = ["Fakultaas Ilmu Kommputer Dan Rekayasa", "Fakultas Ilmu Ekonomi"];
+    return view('fakultas.index', compact('fakultas', 'kampus'));
+
 });
