@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\MateriController;
+use APP\Http\Controllers\MhsApiController;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,3 +40,15 @@ Route::get('/fakultas', function () {
     return view('fakultas.index', compact('fakultas', 'kampus'));
 
 });
+
+Route::get('/materi/index', 
+[MateriController::class, 'index']);
+
+Route::get('/materi/detail/{id}',
+ [MateriController::class, 'detail']);
+
+ Route::resource('prodi', ProdiController::class);
+
+Route::apiResource('api/mhs', 
+controller: MhsApiController::class);
+
