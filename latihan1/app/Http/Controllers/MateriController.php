@@ -13,6 +13,7 @@ class MateriController extends Controller
     public function detail($id = null){
         return view('materi.index');
     }
+
 }
 
 

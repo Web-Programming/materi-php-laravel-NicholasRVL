@@ -52,3 +52,24 @@ Route::get('/materi/detail/{id}',
 Route::apiResource('api/mhs', 
 controller: MhsApiController::class);
 
+Route::get('/sidebar', function() {
+
+    return view('layout2.sidebar');
+
+});
+
+Route::get('/master', function() {
+
+    return view('layouts.master');
+
+});
+
+Route::resource('materi', App\Http\Controllers\MateriController::class);
+Route::resource('prodi', App\Http\Controllers\ProdiController::class);
+Route::resource('mahasiswa', App\Http\Controllers\MahasiswaController::class);
+Route::resource('mhs', App\Http\Controllers\DosenController::class);
+Route::resource('fakultas', App\Http\Controllers\FakultasController::class);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
