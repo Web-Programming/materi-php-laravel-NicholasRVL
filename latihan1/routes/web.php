@@ -3,6 +3,7 @@
 use App\Http\Controllers\MateriController;
 use APP\Http\Controllers\MhsApiController;
 use App\Http\Controllers\ProdiController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
