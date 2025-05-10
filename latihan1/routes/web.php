@@ -6,6 +6,7 @@ use App\Http\Controllers\ProdiController;
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -67,7 +68,110 @@ Route::get('/master', function(){
 
 
 
-    return view('layout.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'));
+    return view('layout.master', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'), [
+        'title' => 'Master'
+    ]);
 
 });
 
+
+
+Route::get('/mhs', function(){
+
+    
+    $kampus = "Universitas MDP";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+    $fkk = "Fakultas Ilmu Komputer Dan Rekayasa";
+    $fkbe = "Fakultas bisnis Dan Manajemen";
+
+
+    return view('mhs.index', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe' ), [
+        'title' => 'MHS'
+    ]);
+
+});
+
+Route::get('/dosen', function(){
+
+    $kampus = "Universitas MDP";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+
+    $fkk = "Fakultas Ilmu Komputer Dan Rekayasa";
+    $fkbe = "Fakultas bisnis Dan Manajemen";
+
+
+
+    return view('dosen.index', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'), [
+        'title' => 'Dosen'
+    ]);
+
+});
+
+
+Route::get('/fakultas', function(){
+
+    $kampus = "Universitas MDP";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+
+    $fkk = "Fakultas Ilmu Komputer Dan Rekayasa";
+    $fkbe = "Fakultas bisnis Dan Manajemen";
+
+
+
+    return view('fakultas.index', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'), [
+        'title' => 'Fakultas'
+    ]);
+
+});
+
+Route::get('/materi', function(){
+
+    $kampus = "Universitas MDP";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+
+    $fkk = "Fakultas Ilmu Komputer Dan Rekayasa";
+    $fkbe = "Fakultas bisnis Dan Manajemen";
+
+
+
+    return view('materi.index', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'), [
+        'title' => 'Materi'
+    ]);
+
+});
+
+Route::get('/prodi', function(){
+
+    $kampus = "Universitas MDP";
+    $dosen = "Dosen";
+    $fakultas = "Fakultas";
+    $prodi = "Prodi";
+    $mahasiswa = "Mahasiswa";
+    $materi = "Materi";
+
+    $fkk = "Fakultas Ilmu Komputer Dan Rekayasa";
+    $fkbe = "Fakultas bisnis Dan Manajemen";
+
+
+
+    return view('prodi.index', compact('kampus', 'dosen', 'fakultas', 'prodi', 'mahasiswa', 'materi', 'fkk', 'fkbe'), [
+        'title' => 'Prodi'
+    ]);
+
+});
