@@ -3,6 +3,7 @@
 use App\Http\Controllers\MateriController;
 use APP\Http\Controllers\MhsApiController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\DosenController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -175,3 +176,5 @@ Route::get('/prodi', function(){
     ]);
 
 });
+
+

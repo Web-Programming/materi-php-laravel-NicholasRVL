@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class dosen extends Controller
+class DosenController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+     public function index()
     {
-        //
+        
     }
 
     /**
@@ -19,7 +16,7 @@ class dosen extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -27,7 +24,7 @@ class dosen extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -35,7 +32,9 @@ class dosen extends Controller
      */
     public function show(string $id)
     {
-        //
+
+
+
     }
 
     /**
@@ -59,6 +58,6 @@ class dosen extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
     }
 }
