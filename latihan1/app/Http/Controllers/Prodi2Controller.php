@@ -4,15 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProdiController extends Controller
+class Prodi2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('materi.index');
-        echo "ini halaman index";
+        return view('prodi2.index', [
+        'kampus'     => 'Universitas MDP',
+        'dosen'      => 'Dosen',
+        'fakultas'   => 'Fakultas',
+        'prodi'      => 'Prodi',
+        'mahasiswa'  => 'Mahasiswa',
+        'materi'     => 'Materi',
+        'fkk'        => 'Fakultas Ilmu Komputer Dan Rekayasa',
+        'fkbe'       => 'Fakultas bisnis Dan Manajemen',
+        'title'      => 'Prodi',
+    ]);
     }
 
     /**
@@ -20,7 +29,7 @@ class ProdiController extends Controller
      */
     public function create()
     {
-        echo "ini halaman create";
+        //
     }
 
     /**
@@ -28,7 +37,7 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        echo "ini halaman store";
+        //
     }
 
     /**
@@ -36,7 +45,7 @@ class ProdiController extends Controller
      */
     public function show(string $id)
     {
-        echo "ini detail prodi dengan id ". $id;
+        //
     }
 
     /**
@@ -44,7 +53,7 @@ class ProdiController extends Controller
      */
     public function edit(string $id)
     {
-        echo "ini form edit prodi dengan id ". $id;
+        //
     }
 
     /**

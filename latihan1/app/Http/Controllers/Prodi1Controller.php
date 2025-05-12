@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DosenController extends Controller
+class Prodi1Controller extends Controller
 {
-     public function index()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('dosen.index', [
+        return view('prodi1.index', [
         'kampus'     => 'Universitas MDP',
         'dosen'      => 'Dosen',
         'fakultas'   => 'Fakultas',
@@ -17,7 +20,7 @@ class DosenController extends Controller
         'materi'     => 'Materi',
         'fkk'        => 'Fakultas Ilmu Komputer Dan Rekayasa',
         'fkbe'       => 'Fakultas bisnis Dan Manajemen',
-        'title'      => 'Dosen',
+        'title'      => 'Prodi',
     ]);
     }
 
@@ -26,7 +29,7 @@ class DosenController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -34,7 +37,7 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -42,9 +45,7 @@ class DosenController extends Controller
      */
     public function show(string $id)
     {
-
-
-
+        //
     }
 
     /**
@@ -68,6 +69,6 @@ class DosenController extends Controller
      */
     public function destroy(string $id)
     {
-
+        //
     }
 }

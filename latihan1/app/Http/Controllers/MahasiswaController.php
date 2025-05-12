@@ -11,7 +11,17 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        return view('mhs.index', [
+        'kampus'     => 'Universitas MDP',
+        'dosen'      => 'Dosen',
+        'fakultas'   => 'Fakultas',
+        'prodi'      => 'Prodi',
+        'mahasiswa'  => 'Mahasiswa',
+        'materi'     => 'Materi',
+        'fkk'        => 'Fakultas Ilmu Komputer Dan Rekayasa',
+        'fkbe'       => 'Fakultas bisnis Dan Manajemen',
+        'title'      => 'Mahasiswa',
+    ]);
     }
 
     /**

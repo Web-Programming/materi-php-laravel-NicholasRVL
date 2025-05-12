@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DosenController extends Controller
+class DashboardController extends Controller
 {
-     public function index()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        return view('dosen.index', [
+
+        return view('layout.content1', [
         'kampus'     => 'Universitas MDP',
         'dosen'      => 'Dosen',
         'fakultas'   => 'Fakultas',
@@ -17,8 +21,23 @@ class DosenController extends Controller
         'materi'     => 'Materi',
         'fkk'        => 'Fakultas Ilmu Komputer Dan Rekayasa',
         'fkbe'       => 'Fakultas bisnis Dan Manajemen',
-        'title'      => 'Dosen',
-    ]);
+        'title'      => 'Dashboard',
+       ]);
+
+        $data = [
+            'newOrders' => 150,
+            'bounceRate' => 53,
+            'userRegistrations' => 44,
+            'uniqueVisitors' => 65,
+            'sales' => 18230.00,
+            'salesGrowth' => 12.5,
+            'activities' => [
+                ['id' => 1, 'user' => 'Admin', 'date' => '11-07-2023', 'activity' => 'Created new order'],
+                ['id' => 2, 'user' => 'User', 'date' => '10-07-2023', 'activity' => 'Updated profile'],
+            ],
+        ];
+
+        return view('dashboard', compact('data'));
     }
 
     /**
@@ -26,7 +45,7 @@ class DosenController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -34,7 +53,7 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -42,9 +61,7 @@ class DosenController extends Controller
      */
     public function show(string $id)
     {
-
-
-
+        //
     }
 
     /**
@@ -68,6 +85,6 @@ class DosenController extends Controller
      */
     public function destroy(string $id)
     {
-
+        //
     }
 }
