@@ -4,6 +4,9 @@ use App\Http\Controllers\MateriController;
 use APP\Http\Controllers\MhsApiController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\FakultasController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -177,4 +180,10 @@ Route::get('/prodi', function(){
 
 });
 
+
+Route::resource('prodi', ProdiController::class);
+Route::resource('materi', MateriController::class);
+Route::resource('dosen', DosenController::class);
+Route::resource('mhs', MahasiswaController::class);
+Route::resource('fakultas', FakultasController::class);
 
