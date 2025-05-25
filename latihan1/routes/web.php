@@ -1,17 +1,23 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\CekLogin;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\MateriController;
+
+
 use APP\Http\Controllers\MhsApiController;
 use App\Http\Controllers\Prodi1Controller;
 use App\Http\Controllers\Prodi2Controller;
-use App\Http\Controllers\DosenController;
-use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\FakultasController;
-
-
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MahasiswaController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -96,23 +102,29 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/mhs', function(){
+
     
 });
 
 Route::get('/dosen', function(){
+ 
 });
 
 
 Route::get('/fakultas', function(){
+   
 });
 
 Route::get('/materi', function(){
+    
 });
 
 Route::get('/prodi1', function(){
+    
 });
 
 Route::get('/prodi2', function(){
+
 });
 
 Route::resource('prodi1', Prodi1Controller::class);
@@ -122,3 +134,29 @@ Route::resource('dosen', DosenController::class);
 Route::resource('mhs', MahasiswaController::class);
 Route::resource('fakultas', FakultasController::class);
 Route::resource('content1', DashboardController::class);
+
+
+//Authentication
+Route::get("/login", [AuthController::class, 'login'])->name('login');
+Route::post("/login", [AuthController::class, 'do_login']);
+Route::get("/register", [AuthController::class, 'register']);
+Route::post("/register", [AuthController::class, 'do_register']);
+Route::get("/logout", [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::group(['middleware' => [CekLogin::class.':admin']], function(){
+        Route::get("/admin", [AdminController::class, 'index']);
+        Route::resource('prodi', ProdiController::class);
+        Route::resource('fakultas', FakultasController::class);
+    });
+
+    Route::group(['middleware' => [CekLogin::class.':user']], function(){
+        Route::get("/user", [UserController::class, 'index']);
+    });
+
+    Route::group(['middleware' => [CekLogin::class.':dosen']], function(){
+        Route::get("/dosen", [DosenController::class, 'index']);
+    });
+});
+

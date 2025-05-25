@@ -18,7 +18,10 @@ class DosenController extends Controller
         'fkk'        => 'Fakultas Ilmu Komputer Dan Rekayasa',
         'fkbe'       => 'Fakultas bisnis Dan Manajemen',
         'title'      => 'Dosen',
+
+        
     ]);
+    
     }
 
     /**

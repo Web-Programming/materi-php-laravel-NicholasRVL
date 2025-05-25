@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ $title }}</title>
+    <title>@yield('title')</title>
 
  
 <link
@@ -62,7 +62,7 @@ crossorigin="anonymous"
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/dashboard" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -219,9 +219,21 @@ crossorigin="anonymous"
                         <p>{{ $materi }}</p>
                     </a>
                 </li>
-            </ul>
-        </nav>
-    </div>
+
+                
+              </ul>
+            </nav>
+          </div>
+
+          <div class="m-2" style="position: absolute; bottom: 0; left: 70px;"  >
+              <form action="{{ url('logout') }}" method="POST" >
+
+                @csrf
+
+              <button type="submit" class="btn btn-secondary rounded">Logout</button>
+
+                </form>
+          </div>
 </aside>
 
 
