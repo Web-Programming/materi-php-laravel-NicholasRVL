@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\Dosen as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Mahasiswa extends Model
+class Dosen extends Model
 {
-    protected $table = "mahasiswa";
-
-    public function prodi(){
-        return $this->belongTo(Prodi::class);
-    }
+    /** @use HasFactory<\Database\Factories\DosenFactory> */
+    use HasFactory;
 
      protected $fillable = [
         'name',

@@ -4,7 +4,6 @@
     <div class="container mt-4">
         <h3>Daftar Materi</h3>
 
-        <a href="#" class="btn btn-primary mb-3">+ Tambah Materi</a>
 
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -22,8 +21,8 @@
                     <td>Materi dasar tentang framework Laravel</td>
                     <td>
                         <center>
-                            <a href="/detail/1" class="btn btn-info btn-sm">Detail</a>
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</button>
+                            <a href="/detail/1" class="btn btn-info btn-sm">Lihat</a>
+                            
                         </center>
                     </td>
                 </tr>
@@ -33,19 +32,30 @@
                     <td>Membahas penggunaan route dan controller</td>
                     <td>
                         <center>
-                            <a href="/detail/2" class="btn btn-info btn-sm">Detail</a>
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</button>
+                            <a href="/detail/2" class="btn btn-info btn-sm">Lihat</a>
+
                         </center>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Template</td>
-                    <td>Contoh Template</td>
+                    <td>CRUD</td>
+                    <td>.......</td>
                     <td>
                         <center>
-                            <a href="/detail/3" class="btn btn-info btn-sm">Detail</a>
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</button>
+                            <a href="/detail/3" class="btn btn-info btn-sm">Lihat</a>
+
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mysql</td>
+                    <td>.......</td>
+                    <td>
+                        <center>
+                            <a href="/detail/3" class="btn btn-info btn-sm">Lihat</a>
+
                         </center>
                     </td>
                 </tr>

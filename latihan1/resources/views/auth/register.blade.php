@@ -36,7 +36,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('/css/adminlte.css') }}" />
-    <link rel="stylesheet" href="/css/app.css">
+    {{-- <link rel="stylesheet" href="/css/app.css"> --}}
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -84,35 +84,48 @@
               </div>
               <div class="input-group-text" style="color: rgb(219, 219, 196);"><span class="bi bi-lock-fill"></span></div>
             </div>
+            @error('password')
+                <span class="text-warning">{{ $message }}</span>
+            @enderror
 
           <div class="d-flex justify-content-center gap-5 mb-4">
 
 
             <div class="text-center">
-                <input type="radio" name="gender" id="male" value="male">
+                <input type="radio" name="level" id="user" value="user">
                   <label for="male" class="gender-option d-flex flex-column align-items-center">
-                    <i class="bi bi-person-standing gender-icon"></i>
-                      <div class="label-text">Male</div>
+                    <i class="bi bi-person-fill"></i>
+                      <div class="label-text" style="color:rgb(219, 219, 196);">User</div>
                   </label>
             </div>
 
 
             <div class="text-center">
-                  <input type="radio" name="gender" id="female" value="female">
+                  <input type="radio" name="level" id="mahasiswa" value="mhs">
                      <label for="female" class="gender-option d-flex flex-column align-items-center">
-                        <i class="bi bi-person-standing-dress gender-icon"></i>
-                            <div class="label-text">Female</div>
+                        <i class="bi bi-mortarboard-fill"></i>
+                            <div class="label-text" style="color:rgb(219, 219, 196);">Mahasiswa</div>
+                       </label>
+             </div>
+
+             <div class="text-center">
+                  <input type="radio" name="level" id="dosen" value="dosen">
+                     <label for="female" class="gender-option d-flex flex-column align-items-center">
+                        <i class="bi bi-person-video3"></i>
+                            <div class="label-text" style="color:rgb(219, 219, 196);">Dosen</div>
                        </label>
              </div>
 
         </div>
 
-
-
-
-            @error('password')
+        @error('level')
                 <span class="text-warning">{{ $message }}</span>
             @enderror
+
+
+
+
+            
             <!--begin::Row-->
             <div class="row">
               <!-- /.col -->

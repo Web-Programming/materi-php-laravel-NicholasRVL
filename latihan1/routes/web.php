@@ -152,14 +152,22 @@ Route::group(['middleware' => ['auth']], function(){
         Route::resource('fakultas', FakultasController::class);
         Route::resource('materi', MateriController::class);
         Route::resource('mahasiswa', MahasiswaController::class);
+        Route::resource('dosen', DosenController::class);
     });
 
     Route::group(['middleware' => [CekLogin::class.':user']], function(){
         Route::get("/user", [UserController::class, 'index']);
     });
 
+    Route::group(['middleware' => [CekLogin::class.':user']], function(){
+        Route::get("/mahasiswa", [UserController::class, 'index']);
+        Route::resource('materi', MateriController::class);
+    });
+
     Route::group(['middleware' => [CekLogin::class.':dosen']], function(){
         Route::get("/dosen", [DosenController::class, 'index']);
+        Route::resource('materi', MateriController::class);
+        Route::resource('mahasiswa', MahasiswaController::class);
     });
 
 });

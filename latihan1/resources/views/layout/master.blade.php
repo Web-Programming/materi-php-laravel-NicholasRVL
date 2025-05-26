@@ -88,7 +88,7 @@ crossorigin="anonymous"
           <!-- Chat items here -->
           <a href="#" class="dropdown-item">
             <div class="media">
-              <img src="img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="img/user2-160x160.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -134,7 +134,7 @@ crossorigin="anonymous"
       <!-- User Menu -->
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
+          <img src="img/luffy siluet.png" class="user-image img-circle elevation-2" alt="User Image">
           <span class="d-none d-md-inline">{{ auth()->user()->name }}</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -276,18 +276,18 @@ $(function() {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
             {
-                label: 'Digital Goods',
-                backgroundColor: 'rgba(60,141,188,0.9)',
-                borderColor: 'rgba(60,141,188,0.8)',
+                label: 'Informatika',
+                backgroundColor: '#00a65a',
+                borderColor: '#00a65a',
                 pointRadius: false,
-                pointColor: '#3b8bba',
-                pointStrokeColor: 'rgba(60,141,188,1)',
+                pointColor: '#00a65a',
+                pointStrokeColor: '#00a65a',
                 pointHighlightFill: '#fff',
-                pointHighlightStroke: 'rgba(60,141,188,1)',
+                pointHighlightStroke: '#00a65a',
                 data: [28, 48, 40, 19, 86, 27, 90]
             },
             {
-                label: 'Electronics',
+                label: 'Management Informatika',
                 backgroundColor: 'rgba(210, 214, 222, 1)',
                 borderColor: 'rgba(210, 214, 222, 1)',
                 pointRadius: false,
@@ -296,7 +296,52 @@ $(function() {
                 pointHighlightFill: '#fff',
                 pointHighlightStroke: 'rgba(220,220,220,1)',
                 data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: 'System Informasi',
+                backgroundColor: '#f56954',
+                borderColor: '#f56954',
+                pointRadius: false,
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: [88, 59, 30, 91, 86, 85, 60]
+            },
+            {
+                label: 'Teknik Elektro',
+                backgroundColor: '#3c8dbc',
+                borderColor: '#3c8dbc',
+                pointRadius: false,
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: [58, 59, 40, 31, 56, 75, 50]
+            },
+            {
+                label: 'Akutansi',
+                backgroundColor: '#f39c12',
+                borderColor: '#f39c12',
+                pointRadius: false,
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: [70, 59, 80, 91, 76, 75, 80]
+            },
+            {
+                label: 'Management',
+                backgroundColor: '#f39c12',
+                borderColor: '#f39c12',
+                pointRadius: false,
+                pointColor: 'rgba(210, 214, 222, 1)',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: 'rgba(220,220,220,1)',
+                data: [90, 60, 80, 91, 86, 95, 80]
             }
+
         ]
     };
 
