@@ -16,6 +16,7 @@ use App\Http\Controllers\Prodi2Controller;
 use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MahasiswaController;
+use App\Models\Mahasiswa;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 
@@ -149,6 +150,8 @@ Route::group(['middleware' => ['auth']], function(){
         Route::get("/admin", [AdminController::class, 'index']);
         Route::resource('prodi', ProdiController::class);
         Route::resource('fakultas', FakultasController::class);
+        Route::resource('materi', MateriController::class);
+        Route::resource('mahasiswa', MahasiswaController::class);
     });
 
     Route::group(['middleware' => [CekLogin::class.':user']], function(){
@@ -158,5 +161,6 @@ Route::group(['middleware' => ['auth']], function(){
     Route::group(['middleware' => [CekLogin::class.':dosen']], function(){
         Route::get("/dosen", [DosenController::class, 'index']);
     });
+
 });
 

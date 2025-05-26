@@ -36,6 +36,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
     <link rel="stylesheet" href="{{ asset('/css/adminlte.css') }}" />
+    <link rel="stylesheet" href="/css/app.css">
     <!--end::Required Plugin(AdminLTE)-->
   </head>
   <!--end::Head-->
@@ -53,7 +54,7 @@
           </a> 
         </div>
         <div class="card-body register-card-body " style="background-color: rgb(121, 121, 121);">
-          <p class="register-box-msg">Register a new membership</p>
+          <p class="register-box-msg">Register a new acount</p>
           <form action="{{ url('register') }}" method="post">
             @csrf
             <div class="input-group mb-1">
@@ -76,13 +77,39 @@
             @error('email')
                 <span class="text-warning">{{ $message }}</span>
             @enderror
-            <div class="input-group mb-1">
+            <div class="input-group mb-2">
               <div class="form-floating">
                 <input id="registerPassword" type="password" name="password" class="form-control" placeholder="" />
                 <label for="registerPassword">Password</label>
               </div>
               <div class="input-group-text" style="color: rgb(219, 219, 196);"><span class="bi bi-lock-fill"></span></div>
             </div>
+
+          <div class="d-flex justify-content-center gap-5 mb-4">
+
+
+            <div class="text-center">
+                <input type="radio" name="gender" id="male" value="male">
+                  <label for="male" class="gender-option d-flex flex-column align-items-center">
+                    <i class="bi bi-person-standing gender-icon"></i>
+                      <div class="label-text">Male</div>
+                  </label>
+            </div>
+
+
+            <div class="text-center">
+                  <input type="radio" name="gender" id="female" value="female">
+                     <label for="female" class="gender-option d-flex flex-column align-items-center">
+                        <i class="bi bi-person-standing-dress gender-icon"></i>
+                            <div class="label-text">Female</div>
+                       </label>
+             </div>
+
+        </div>
+
+
+
+
             @error('password')
                 <span class="text-warning">{{ $message }}</span>
             @enderror
@@ -101,7 +128,7 @@
           
           <!-- /.social-auth-links -->
           <p class="mb-0">
-            <a href="{{ url('login')}}" class="link text-center" style="color: rgb(219, 219, 196);"> I already have a membership </a>
+            <a href="{{ url('login')}}" class="link text-center" style="color: rgb(219, 219, 196);"> I already have a acount</a>
           </p>
         </div>
         <!-- /.register-card-body -->
